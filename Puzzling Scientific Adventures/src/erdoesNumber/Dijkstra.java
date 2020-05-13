@@ -1,3 +1,9 @@
+/**
+ * 13.05.2020 - v1.0
+ * Puzzling Scientific Adventures
+ * Task 1 - Erdös Number
+ * @author Cecilia Casarella & Leo Peters
+ */
 package erdoesNumber;
 
 import java.util.ArrayList;
@@ -5,6 +11,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.PriorityQueue;
 
+/**
+ * The Dijkstra algorithm used to search for the shortest path (All Edges have a weight of 1)
+ * @author Leo
+ *
+ */
 public class Dijkstra {
     public void computePath(Vertex sourceVertex) {
         sourceVertex.setMinDistance(0);

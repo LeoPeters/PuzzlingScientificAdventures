@@ -1,8 +1,18 @@
+/**
+ * 13.05.2020 - v1.0
+ * Puzzling Scientific Adventures
+ * Task 1 - Erdös Number
+ * @author Cecilia Casarella & Leo Peters
+ */
 package erdoesNumber;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Vertices for this Dijkstra hold an Author by his/her name.
+ *
+ */
 public class Vertex implements Comparable<Vertex> {
     private String name;
     private List<Edge> edges;

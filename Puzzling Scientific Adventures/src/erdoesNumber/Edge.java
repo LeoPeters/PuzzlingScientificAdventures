@@ -1,5 +1,15 @@
+/**
+ * 13.05.2020 - v1.0
+ * Puzzling Scientific Adventures
+ * Task 1 - Erdös Number
+ * @author Cecilia Casarella & Leo Peters
+ */
 package erdoesNumber;
 
+/**
+ * The Edges for this Dijkstra hold a publication by the name.
+ *
+ */
 public class Edge {
     private double weight;
     private String paper;
