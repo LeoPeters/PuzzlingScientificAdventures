@@ -1,0 +1,133 @@
+P. Erdös#
+	A. Pinkus
+		S. Karlin
+			H. Royden
+
+1. 	The closed linear span of{xk−ck}∞ - P. Erdös & A. Pinkus
+
+2. 	Oscillation Properties of Generalized Characteristic 		Polynomialsfor Totally Positive and Positive Definite 		Matrices - A. Pinkus & S. Karlin
+
+3. Multistage Statistical Decision Procedures - S. Karlin & H. Royden
+
+
+P. Erdös#
+	A. Odlyzko
+		P. Flajolet
+			F. Meunier
+				 F. Gormand
+
+1. On the density of odd integers of the form (p − 1)2−n and related questions - P. Erdös & A. Odlyzko
+
+2. Singularity analysis of generating functions - A. Odlyzko & P. Flajolet
+
+3. Hyperloglog: the analysis of a near-optimal cardinality estimation algorithm - P. Flajolet & F. Meunier
+
+4. Genome Screen for Asthma and Related Phenotypes in the French EGEA Study - F. Meunier & F. Gormand
+
+
+P. Erdös#
+      E. Netanyahu
+            C. Loewner
+                  L. Nirenberg#
+                        F. John#
+
+1. A remark on polynomials and the transfinite diameter - P. Erdös & E. Netanyahu
+
+2. On some compositions of Hadamard type in classes of analytic functions - E. Netanyahu & C. Loewner
+
+3. Partial differential equations invariant under conformal or projective transformations - C. Loewner & L. Nirenberg
+
+4. On functions of bounded mean oscillation - L. Nirenberg & F. John
+
+
+P. Erdös#
+      A. L. Rubin
+            A. C. M. Ran
+                  H. Langer
+                        M. G. Krein#
+
+1. Choosability in graphs - P. Erdös
+
+2. Stability index of invariant subspaced of matrices - A. L. Rubin & A. C. M. Ran
+
+3. Invariant subspaces of infinite dimensional Hamiltonians and solutions of the corresponding Riccati equations - A. C. M. Ran & H. Langer
+
+4. Über einige Fortsetzungsprobleme, die eng mit der Theorie hermitescher Operatoren im Raume IIx zusammenhängen. I. Einige Funktionenklassen und ihre Darstellungen - H. Langer & M. G. Krein
+
+
+P. Erdös#
+      D. Holton
+            P. Hilton
+                  J. H. C. Whitehead
+                        M. H. A. Newman
+                              A. Turing
+
+1. On the Chessmaster Problem - P. Erdös & D. Holton
+
+2. Mathematical vistas: from a room with many windows - D. Holton & P. Hilton
+
+3. The Mathematical Works of JHC Whitehead: Algebraic and Classical Topology - P. Hilton & J. H. C. Whitehead
+
+4. On subdivisions of complexes - J. H. C. Whitehead & M. H. A. Newman
+
+5. A formal theorem in Church's theory of types - M. H. A. Newman & A. Turing
+
+
+P. Erdös#
+	R. R. Hall
+    	D. B. Zagier
+            Y. I. Manin
+                M. L. Kontsevich
+
+1. On the angular distribution of Gaussian integers with fixed norm - P. Erdös & R. R. Hall
+
+2. Reciprocity formulae for general Dedekind-Rademacher sums - R. R. Hall & D. B. Zagier
+
+3. Friedrich Hirzebruch (1927--2012) - D. B. Zagier & Y. I. Manin
+
+4. Vladimir Igorevich Arnol'd (on his 60th birthday) - Y. I. Manin & M. L. Kontsevich
+
+
+P. Erdös#
+	A. J. Hoffman
+		R. S. Varga
+			M. H. Schultz
+				M. Lees
+					P. Cohen
+
+1. Maximum degree in graphs of diameter 2 - P. Erdös & A.J. Hoffman
+
+2. Patterns of dependence in generalizations of Gerschgorin's theorem - A. J. Hoffman & R. S. Varga
+
+3. Piecewise Hermite interpolation in one and two variables with applications to partial differential equations - R. S. Varga & M. H. Schultz
+
+4. A Leray-Schauder principle for A-compact mappings and the numerical solution of non-linear two-point boundary value problems - M. H. Schultz & M. Lees
+
+5. Asymptotic decay of solutions of differential inequalities. - M. Lees & P. Cohen
+
+
+P. Erdös#
+	S. Krantz
+		E. M. Stein#
+			G. Margulis#
+
+1. Intersection Graphs for Families of Balls in Rn. - P. Erdös & S. Krantz
+
+2. Hp theory on a smooth domain in RN and elliptic boundary value problems - S. Krantz & E. M. Stein
+
+3.  Analogs of Wiener's ergodic theorems for semisimple Lie groups. II - E. M. Stein & G. Margulis
+
+
+P. Erdös#
+	N. Alon
+		M. Blum
+			L. Blum
+				S. Smale
+
+1. Disjoint edges in geometric graphs - P. Erdös & N. Alon
+
+2. Matching nuts and bolts - N. Alon & M. Blum
+
+3. A simple unpredictable pseudo-random number generator - M. Blum & L. Blum
+
+4. Complexity and real computation - L. Blum & S. Smale
