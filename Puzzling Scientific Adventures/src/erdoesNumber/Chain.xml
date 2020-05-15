@@ -1,0 +1,76 @@
+<?xml version = "1.0"?>
+<ErdösNumber>
+	<Chain>
+		<Authors>
+			<Author>A. Pinkus</Author>
+			<Author>S. Karlin</Author>
+			<Author>H. Royden</Author>
+		</Authors>
+		<Publications>
+			<Publication>The closed linear span of{xk−ck}∞</Publication>
+			<Publication>Oscillation Properties of Generalized Characteristic Polynomials for Totally Positive and Positive Definite Matrices</Publication>
+			<Publication>Multistage Statistical Decision Procedures</Publication>
+		</Publications>
+	</Chain>
+
+	<Chain>
+		<Authors>
+			<Author>A. Odlyzko</Author>
+			<Author>P. Flajolet</Author>
+			<Author>F. Meunier</Author>
+			<Author>F. Gormand</Author>
+		</Authors>
+		<Publications>
+			<Publication>On the density of odd integers of the form (p − 1)2−n and related questions</Publication>
+			<Publication>Singularity analysis of generating functions</Publication>
+			<Publication>Hyperloglog: the analysis of a near-optimal cardinality estimation algorithm</Publication>
+			<Publication>Genome Screen for Asthma and Related Phenotypes in the French EGEA Study</Publication>
+		</Publications>
+	</Chain>
+
+	<Chain>
+		<Authors>
+			<Author>E. Netanyahu</Author>
+			<Author>C. Loewner</Author>
+			<Author>L. Nirenberg</Author>
+			<Author>F. John</Author>
+		</Authors>
+		<Publications>
+			<Publication>A remark on polynomials and the transfinite diameter</Publication>
+			<Publication>On some compositions of Hadamard type in classes of analytic functions</Publication>
+			<Publication>Partial differential equations invariant under conformal or projective transformations</Publication>
+			<Publication>On functions of bounded mean oscillation</Publication>
+		</Publications>
+	</Chain>
+
+	<Chain>
+		<Authors>
+			<Author>A. L. Rubin</Author>
+			<Author>A. C. M. Ran</Author>
+			<Author>H. Langer</Author>
+			<Author>M. G. Krein</Author>
+		</Authors>
+		<Publications>
+			<Publication>Choosability in graphs</Publication>
+			<Publication>Stability index of invariant subspaced of matrices</Publication>
+			<Publication>Invariant subspaces of infinite dimensional Hamiltonians and solutions of the corresponding Riccati equations</Publication>
+			<Publication>Über einige Fortsetzungsprobleme, die eng mit der Theorie hermitescher Operatoren im Raume IIx zusammenhängen. I. Einige Funktionenklassen und ihre Darstellungen</Publication>
+		</Publications>
+	</Chain>
+	<Chain>
+		<Authors>
+			<Author>D. Holton</Author>
+			<Author>P. Hilton</Author>
+			<Author>J. H. C. Whitehead</Author>
+			<Author>M. H. A. Newman</Author>
+			<Author>A. Turing</Author>
+		</Authors>
+		<Publications>
+			<Publication>On the Chessmaster Problem</Publication>
+			<Publication>Mathematical vistas: from a room with many windows</Publication>
+			<Publication>The Mathematical Works of JHC Whitehead: Algebraic and Classical Topology</Publication>
+			<Publication>On subdivisions of complexes</Publication>
+			<Publication>A formal theorem in Church's theory of types</Publication>
+		</Publications>
+	</Chain>
+</ErdösNumber>
