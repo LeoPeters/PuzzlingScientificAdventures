@@ -7,14 +7,14 @@ import java.lang.reflect.Method;
 
 import org.junit.jupiter.api.Test;
 
-import goldbach.Goldbach;
+import goldbach.GoldbachLong;
 
 public class GoldbachTest {
 	
 	@Test
 	public void isPrime() {
 		try {
-			Class<Goldbach> gb = Goldbach.class;
+			Class<GoldbachLong> gb = GoldbachLong.class;
 			Method isPrime = gb.getDeclaredMethod("isPrime", int.class);
 			isPrime.setAccessible(true);
 //			Method goldbachAlgorithm = gb.getDeclaredMethod("goldbachAlgorithm", int.class);

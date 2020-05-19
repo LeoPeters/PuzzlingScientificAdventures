@@ -4,6 +4,7 @@
  * Task 1 - Erdös Number
  * @author Cecilia Casarella & Leo Peters
  */
+
 package erdoesNumber;
 
 import java.util.ArrayList;
