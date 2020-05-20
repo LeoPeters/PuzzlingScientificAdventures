@@ -43,6 +43,7 @@ public class PlainTextAttack {
 	}
 	
 	private void createMap(String line) {
+		
 		return;
 	}
 	
