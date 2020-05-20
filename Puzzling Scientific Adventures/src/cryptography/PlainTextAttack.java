@@ -2,8 +2,13 @@ package cryptography;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 
 public class PlainTextAttack {
@@ -36,6 +41,7 @@ public class PlainTextAttack {
 			}
 		}
 	}
+
 	
 	private boolean checkSentence(String line) {
 		
@@ -43,8 +49,14 @@ public class PlainTextAttack {
 	}
 	
 	private void createMap(String line) {
+		line = line.replaceAll("\\s", "");
+		for(int i = 0; i < line.length(); i++) {
+			decrypt.put(line.charAt(i), ENCRYPTLINE.charAt(i));
+		}
+	}
+	
+	private void transLateDecrypted() {
 		
-		return;
 	}
 	
 	public static void main(String[] args) {
