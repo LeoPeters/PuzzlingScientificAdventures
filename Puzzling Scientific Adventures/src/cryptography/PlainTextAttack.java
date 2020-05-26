@@ -1,3 +1,10 @@
+/**
+ * 27.05.2020 - v1.0
+ * Puzzling Scientific Adventures
+ * Task 2 - plain text attack
+ * @author Cecilia Casarella & Leo Peters
+ */
+
 package cryptography;
 
 import java.io.File;
@@ -5,18 +12,24 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import javax.annotation.processing.FilerException;
-
-
+/**
+ * This class prepares and executes a plain text attack. The sentence needed for
+ * encryption is set at String "ENCRYPTLINE". The regex "REGEXENCRYPTLINE" has to
+ * match the sentence when it is decrypted (also indicating every duplicate
+ * letter).
+ * 
+ * @author Leo
+ *
+ */
 public class PlainTextAttack {
-	public static final String ENCRYPTLINE = "the quick brown fox jumps over the lazy dog";
-	public static final String REGEXENCRYPTLINE = "\\w{3}\\s(\\w{5}\\s){2}\\w{3}\\s\\w{5}\\s\\w{4}\\s\\w{3}\\s\\w{4}\\s\\w{3}";
-	
+	public static String encryptLine = "the quick brown fox jumps over the lazy dog";
+	public static String regexEncryptLine = "(\\w)(\\w)(\\w)\\s\\w{5}\\s\\w{2}(\\w)\\w{2}\\s\\w\\4\\w\\s\\w{5}\\s\\4\\w\\3\\w\\s\\1\\2\\3\\s\\w{4}\\s\\w\\4\\w";
+
 	private File file;
 	private Scanner scanner;
 	private HashMap<Character, Character> decrypt = new HashMap<Character, Character>();
 	private boolean foundEncryption;
-	
+
 	public PlainTextAttack() {
 		try {
 			file = new File("input.txt");
@@ -27,55 +40,64 @@ public class PlainTextAttack {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * Find the line indicated by ENCRYPTLINE
+	 * 
+	 * @throws EndOfFileException
+	 */
 	private void findEncryption() throws EndOfFileException {
-		while(!foundEncryption) {
+		while (!foundEncryption) {
 			String line = readInput();
-			if(line.matches(REGEXENCRYPTLINE)) {
-				if(checkSentence(line)) {
-					createMap(line);
-					foundEncryption = true;
-				}
+			if (line.matches(regexEncryptLine)) {
+//				if(checkSentence(line)) {
+				createMap(line);
+				foundEncryption = true;
+//				}
 			}
 		}
 	}
-	
+
 	private String readInput() throws EndOfFileException {
 		String tempLine = "";
-		while(scanner.hasNextLine()) {
+		while (scanner.hasNextLine()) {
 			tempLine = scanner.nextLine();
-			if(!tempLine.isEmpty()) {
+			if (!tempLine.isEmpty()) {
 				return tempLine;
 			}
 		}
 		throw new EndOfFileException();
 	}
 
-	
-    private boolean checkSentence(String line) {
-        //Character 0 and Character 31 should match
-        //Character 1 and Character 32 should match
-        //Character 2 Character 28 Character 33 should match
-        //Character 12 Character 17 Character 26 and Character 41 should match
-        char[] word = line.toCharArray();
-        if (word[0] == word[31] && word[1] == word[32] && word[2] == word[28] && word[28] == word[33] && word[12] == word[17] && word[17] == word[26] && word[26] == word[41]) {
-            //if the matches are correct and removing the duplicate characters we count 26 letter then it is the correct sentence
-            return line.replaceAll("[^a-z]", "").replaceAll("(.)(?=.*\\1)", "").length() == 26;
-        }
-        return false;
-    }
-	
+	/**
+	 * Creating a map for all characters in the alphabet. The keys are the letters
+	 * found in the decrypted sentence. The values are the corresponding encrypted
+	 * letters.
+	 * 
+	 * @param line
+	 */
 	private void createMap(String line) {
-		line = line.replaceAll("\\s", "");
-		for(int i = 0; i < line.length(); i++) {
-			decrypt.put(line.charAt(i), ENCRYPTLINE.charAt(i));
+		line = line.replaceAll("^\\w", "");
+		String encryptedLine = encryptLine.replaceAll("^\\w", "");
+		for (int i = 0; i < line.length(); i++) {
+			decrypt.put(line.charAt(i), encryptedLine.charAt(i));
 		}
 	}
-	
+
+	/**
+	 * Translate all decrypted sentences with the help of the map.
+	 * 
+	 * @throws EndOfFileException
+	 */
 	private void transLateDecrypted() throws EndOfFileException {
-		while(true) {
-			for(char c : readInput().toCharArray()) {
-				if(c != ' ') {
+		try {
+			scanner = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		while (true) {
+			for (char c : readInput().toCharArray()) {
+				if (c != ' ') {
 					c = decrypt.get(c);
 				}
 				System.out.print(c);
@@ -83,11 +105,13 @@ public class PlainTextAttack {
 			System.out.println();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		PlainTextAttack pta = new PlainTextAttack();
+		DecryptLines decrypt = new DecryptLines();
 		try {
-			pta.readInput();
+			decrypt.setupDecrypt();
+			pta.findEncryption();
 		} catch (EndOfFileException e) {
 			System.out.println("No encryption found in document");
 		}
@@ -96,5 +120,21 @@ public class PlainTextAttack {
 		} catch (EndOfFileException e) {
 			System.out.println("All lines translated");
 		}
+	}
+
+	public static String getEncryptLine() {
+		return encryptLine;
+	}
+
+	public static void setEncryptLine(String encryptLine) {
+		PlainTextAttack.encryptLine = encryptLine;
+	}
+
+	public static String getRegexEncryptLine() {
+		return regexEncryptLine;
+	}
+
+	public static void setRegexEncryptLine(String regexEncryptLine) {
+		PlainTextAttack.regexEncryptLine = regexEncryptLine;
 	}
 }
