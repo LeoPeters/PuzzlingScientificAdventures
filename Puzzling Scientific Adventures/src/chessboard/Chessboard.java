@@ -4,6 +4,7 @@
  * Task 2 - plain text attack
  * @author Cecilia Casarella & Leo Peters
  */
+
 package chessboard;
 
 import java.io.File;
@@ -11,17 +12,18 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
+ * This class is a solution for the chessboard task. (For more information see
+ * "Ant on a chessboard.pdf"). You will be asked to input a number (in the
+ * "chessboard.txt" file), that will determine how many steps the algorithm will
+ * calculate.
  * 
  * @author Leo
  *
  */
 public class Chessboard {
-	/*
-	 * n, e, s, e, nn, ww n, eee, sss, e, nnnn, wwww n, eeeee, sssss, e, nnnnnn,
-	 * wwwwww
-	 */
+
 	private int[] array = new int[4]; // N = 0, E = 1, S = 2, W = 3
-	private int numberOfSteps = 20;
+	private int numberOfSteps;
 	private int countSteps = 2;
 	private int counterAlgorithm = 1;
 
@@ -36,7 +38,7 @@ public class Chessboard {
 			while (scanner.hasNextLine()) {
 				temp = scanner.nextLine();
 				value = Integer.parseInt(temp);
-				if(value == 0) {
+				if (value == 0) {
 					break;
 				}
 				chessboard.doAlgorithmNTimes(value);
@@ -49,6 +51,9 @@ public class Chessboard {
 		}
 	}
 
+	/**
+	 * Reset variables after the algorithm ran through its scheme
+	 */
 	private void reset() {
 		countSteps = 2;
 		counterAlgorithm = 1;
@@ -57,19 +62,31 @@ public class Chessboard {
 		}
 	}
 
+	/**
+	 * This is a wrapper for the algorithmStep() and will catch the
+	 * FinishedAlgorithmException thrown by countArray
+	 * 
+	 * @param n
+	 */
 	private void doAlgorithmNTimes(int n) {
 		reset();
 		numberOfSteps = n;
-		
+
 		try {
 			while (true) {
 				algorithmStep();
 			}
 		} catch (FinishedAlgorithmException e) {
 		}
-		System.out.println("Input: " + n + "\t\tOutput: " + (array[1] - array[3] + 1) + " " + (array[0] - array[2] + 1));
+		System.out
+				.println("Input: " + n + "\t\tOutput: " + (array[1] - array[3] + 1) + " " + (array[0] - array[2] + 1));
 	}
 
+	/**
+	 * This will make one cycle of steps until the start of the next cycle.
+	 * 
+	 * @throws FinishedAlgorithmException
+	 */
 	public void algorithmStep() throws FinishedAlgorithmException {
 		countArray(0);
 		for (int i = 0; i < counterAlgorithm; i++) {
@@ -88,25 +105,21 @@ public class Chessboard {
 		counterAlgorithm += 2;
 	}
 
+	/**
+	 * This method will count the steps of the ant one by one and checks if we have
+	 * reached the determined number of steps. If so it will throw a
+	 * FinishedAlgorithmException which can be caught to break out of the loop.
+	 * 
+	 * @param index - the index that should be counted up (see declaration of array
+	 *              for more info)
+	 * @throws FinishedAlgorithmException
+	 */
 	private void countArray(int index) throws FinishedAlgorithmException {
 		array[index]++;
 		if (countSteps++ == numberOfSteps) {
 			throw new FinishedAlgorithmException();
 		}
 	}
-	
-//	private void mathematicalSolution(int n) {
-//		int sqrt = (int) Math.sqrt(n);
-//		int upperBound = sqrt+1;
-//		if(sqrt % 2 == 0) {
-//			
-//		} else {
-//			n - (int)Math.pow(sqrt, 2);
-//		}
-//	}
-	
-	
-	
 
 	public int getNumberOfSteps() {
 		return numberOfSteps;
