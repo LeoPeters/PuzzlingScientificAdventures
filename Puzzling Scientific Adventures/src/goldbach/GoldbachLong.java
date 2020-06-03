@@ -18,7 +18,7 @@ import java.util.Scanner;
  *
  */
 public class GoldbachLong {
-	public static final int NUMBEROFPRIMES = 20;
+	public static final int NUMBEROFPRIMES = 4;
 	private static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
