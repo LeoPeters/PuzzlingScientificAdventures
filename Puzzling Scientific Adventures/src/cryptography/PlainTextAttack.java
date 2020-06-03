@@ -22,8 +22,8 @@ import java.util.Scanner;
  *
  */
 public class PlainTextAttack {
-	public static String encryptLine = "the quick brown fox jumps over the lazy dog";
-	public static String regexEncryptLine = "(\\w)(\\w)(\\w)\\s\\w{5}\\s\\w{2}(\\w)\\w{2}\\s\\w\\4\\w\\s\\w{5}\\s\\4\\w\\3\\w\\s\\1\\2\\3\\s\\w{4}\\s\\w\\4\\w";
+	private String encryptLine = "the quick brown fox jumps over the lazy dog";
+	private String regexEncryptLine = "(\\w)(\\w)(\\w)\\s\\w{5}\\s\\w{2}(\\w)\\w{2}\\s\\w\\4\\w\\s\\w{5}\\s\\4\\w\\3\\w\\s\\1\\2\\3\\s\\w{4}\\s\\w\\4\\w";
 
 	private File file;
 	private Scanner scanner;
@@ -58,6 +58,11 @@ public class PlainTextAttack {
 		}
 	}
 
+	/**
+	 * Reads the next line of the "input.txt" file.
+	 * @return
+	 * @throws EndOfFileException
+	 */
 	private String readInput() throws EndOfFileException {
 		String tempLine = "";
 		while (scanner.hasNextLine()) {
@@ -77,10 +82,9 @@ public class PlainTextAttack {
 	 * @param line
 	 */
 	private void createMap(String line) {
-		line = line.replaceAll("^\\w", "");
-		String encryptedLine = encryptLine.replaceAll("^\\w", "");
+//		System.out.println(line);
 		for (int i = 0; i < line.length(); i++) {
-			decrypt.put(line.charAt(i), encryptedLine.charAt(i));
+			decrypt.put(line.charAt(i), encryptLine.charAt(i));
 		}
 	}
 
@@ -108,7 +112,7 @@ public class PlainTextAttack {
 
 	public static void main(String[] args) {
 		PlainTextAttack pta = new PlainTextAttack();
-		DecryptLines decrypt = new DecryptLines();
+		EncryptLines decrypt = new EncryptLines(pta);
 		try {
 			decrypt.setupDecrypt();
 			pta.findEncryption();
@@ -122,19 +126,19 @@ public class PlainTextAttack {
 		}
 	}
 
-	public static String getEncryptLine() {
+	public String getEncryptLine() {
 		return encryptLine;
 	}
 
-	public static void setEncryptLine(String encryptLine) {
-		PlainTextAttack.encryptLine = encryptLine;
+	public void setEncryptLine(String encryptLine) {
+		this.encryptLine = encryptLine;
 	}
 
-	public static String getRegexEncryptLine() {
+	public String getRegexEncryptLine() {
 		return regexEncryptLine;
 	}
 
-	public static void setRegexEncryptLine(String regexEncryptLine) {
-		PlainTextAttack.regexEncryptLine = regexEncryptLine;
+	public void setRegexEncryptLine(String regexEncryptLine) {
+		this.regexEncryptLine = regexEncryptLine;
 	}
 }

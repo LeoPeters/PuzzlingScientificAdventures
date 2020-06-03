@@ -11,23 +11,34 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class DecryptLines {
+/**
+ * 
+ * @author Leo
+ *
+ */
+public class EncryptLines {
 	private Scanner scanner = new Scanner(System.in);
 	private ArrayList<String> sentences = new ArrayList<String>();
 	private ArrayList<String> decryptedSentences = new ArrayList<String>();
 	private ArrayList<Character> letters = new ArrayList<Character>();
 	private HashMap<Character, Character> encrypt = new HashMap<Character, Character>();
+	PlainTextAttack pta;
 
-	public DecryptLines() {
+	public EncryptLines(PlainTextAttack pta) {
+		this.pta = pta;
 		for (int i = 97; i < 123; i++) {
 			letters.add((char) i);
 		}
 		encrypt.put(Character.valueOf((char) 32), Character.valueOf((char) 32));
 	}
 
+	/**
+	 * Read lines from std input and put into the ArrayList
+	 */
 	public void readLines() {
 		System.out.println("Please type the line you want to decrypt with and hit enter! (Type x for default input)");
 		String input = scanner.nextLine();
@@ -48,7 +59,7 @@ public class DecryptLines {
 		}
 	}
 
-	public void decryptLines() {
+	public void encryptLines() {
 		FileWriter writer;
 		try {
 			File file = new File("input.txt");
@@ -62,6 +73,7 @@ public class DecryptLines {
 				}
 				decryptedSentences.add(temp);
 			}
+			Collections.shuffle(decryptedSentences);
 			for (String s : decryptedSentences) {
 				writer.write(s + "\n");
 			}
@@ -76,31 +88,27 @@ public class DecryptLines {
 		ArrayList<String> regex = new ArrayList<String>();
 		String sentence = sentences.get(0);
 		char letter;
-		int numberOfDuplicates = 0;
 
 		for (int i = 0; i < sentence.length(); i++) {
 			letter = sentence.charAt(i);
 			if (letter != (int) 32) { // If not a whitespace
 				if (sentence.substring(0, i).contains(String.valueOf(letter))) {
-					regex.add("(\\\\" + String.valueOf(sentence.indexOf(letter)) + ")");
+					regex.add("(\\" + String.valueOf(sentence.indexOf(letter) + 1) + ")");
 				} else {
-					regex.add("(\\\\w)");
+					regex.add("(\\w)");
 				}
 			} else {
-				regex.add("(\\\\s)");
+				regex.add("(\\s)");
 			}
 		}
-		System.out.println(String.join("", regex));
 		return String.join("", regex);
 	}
 	
 	public void setupDecrypt() {
 		readLines();
 		randomizeLetters();
-		decryptLines();
-		PlainTextAttack.setEncryptLine(sentences.get(0));
-		PlainTextAttack.setRegexEncryptLine(buildRegex());
-		
+		encryptLines();
+		pta.setEncryptLine(sentences.get(0));
+		pta.setRegexEncryptLine(buildRegex());
 	}
-
 }
